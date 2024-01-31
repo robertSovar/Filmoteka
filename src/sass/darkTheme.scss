@@ -1,0 +1,223 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-light: #f5e8e8;
+  --clr-dark: #b92f2c;
+  --clr-primary: #c96818;
+  --clr-secondary: #631918;
+  --clr-white: #fff;
+  --foreground: var(--clr-dark);
+  --background: var(--clr-light);
+  --second-background: var(--clr-secondary);
+}
+
+.darkmode {
+  --clr-light: #f5e8e8;
+  --clr-dark: #1a1a1a;
+  --foreground: var(--clr-light);
+  --background: var(--clr-dark);
+}
+
+body {
+  background: var(--background);
+}
+
+body.darkmode .movie,
+body.darkmode .queue,
+body.darkmode .watched,
+body.darkmode .container,
+body.darkmode .movie-wrapper,
+body.darkmode .movie-wrapper__card,
+body.darkmode .movie-wrapper__title {
+  background: var(--background);
+  color: var(--clr-white);
+}
+body.darkmode .site-nav-item a,
+body.darkmode .watched-queue-container li a {
+  background: var(--background);
+  color: var(--clr-white);
+  border: 1px solid #fff;
+}
+body.darkmode .site-nav-item a:hover,
+body.darkmode .watched-queue-container li a:hover {
+  background-color: var(--clr-white);
+  color: var(--second-background);
+  border: 1px solid var(--second-background);
+}
+body.darkmode footer,
+body.darkmode .footer-container,
+body.darkmode .students,
+body.darkmode .heart {
+  background: var(--second-background);
+  color: var(--clr-white);
+  stroke: var(--clr-white);
+}
+body.darkmode .film-modal-title {
+  background: var(--clr-secondary);
+  color: var(--clr-white);
+}
+body.darkmode .film-modal-content {
+  background: var(--clr-secondary);
+  color: var(--clr-white);
+  box-shadow: 8px 10px 20px #b92f2c;
+}
+body.darkmode .close-modal {
+  color: var(--clr-white);
+}
+body.darkmode #scrollToTopBtn {
+  background-color: var(--clr-white);
+}
+body.darkmode .fas.fa-arrow-up {
+  color: #b92f2c;
+}
+body.darkmode #scrollToTopBtn:hover {
+  box-shadow: 4px 5px 10px var(--clr-white);
+}
+
+/* Pentru tot conținutul paginii */
+html {
+  scrollbar-color: var(--clr-primary) var(--background); /* Pentru Firefox, culoarea bară și culoarea fundalului scrollbar-ului */
+}
+
+body::-webkit-scrollbar {
+  width: 20px;
+}
+
+body.darkmode body::-webkit-scrollbar-track {
+  background: #b92f2c;
+  cursor: pointer;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(217, 44, 17);
+  background: radial-gradient(
+    circle,
+    rgba(217, 44, 17, 1) 20%,
+    rgba(176, 48, 57, 1) 47%,
+    rgba(163, 12, 23, 1) 76%
+  );
+  border-radius: 20px;
+  border: 3px solid var(--background);
+}
+// Tranzitie pentru light mode
+body,
+.movie,
+.queue,
+.watched,
+.container,
+.movie-wrapper,
+.movie-wrapper__card,
+.movie-wrapper__title,
+.site-nav-item a,
+.watched-queue-container li a,
+footer,
+.footer-container,
+.students,
+.heart,
+.film-modal-title,
+.film-modal-content,
+.close-modal,
+#scrollToTopBtn,
+.fas.fa-arrow-up,
+#scrollToTopBtn:hover,
+body::-webkit-scrollbar-track,
+body::-webkit-scrollbar-thumb,
+.theme-switch .slider,
+.theme-switch .slider:before {
+  transition: 0.4s ease-in;
+}
+
+// Tranzitie pentru light mode
+body.darkmode {
+  background: var(--background);
+}
+
+/* Style for the slider */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.theme-switch .theme-icon {
+  display: none;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+}
+
+.theme-switch input {
+  display: none;
+}
+#sunIcon {
+  color: #b92f2c;
+}
+#moonIcon {
+  color: #fff;
+  font-size: 24px;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  transition: 0.4s;
+  border-radius: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ajustează pentru a distribui uniform iconele */
+  padding: 0 5px; /* Spațiu la capete pentru icone */
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #b92f2c;
+  transition: 0.4s ease-in;
+  border-radius: 50%;
+}
+
+.theme-icon {
+  display: none; /* Ascunde inițial ambele icone */
+  font-size: 30px;
+}
+
+input:checked + .slider #moonIcon {
+  display: block;
+}
+
+input:not(:checked) + .slider #sunIcon {
+  display: block;
+  transform: translateX(30px);
+}
+
+input:checked + .slider {
+  background-color: var(--clr-dark);
+  border: 1px solid #fff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(36px);
+  background-color: #fff;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

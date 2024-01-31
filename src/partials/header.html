@@ -1,0 +1,76 @@
+<header class="header-home">
+  <div class="header-content-container">
+    <nav class="site-navigation">
+      <ul class="site-nav-list">
+        <li class="site-nav-item">
+          <a
+            href="./index.html"
+            class="site-nav-button home-btn"
+            data-request="Home"
+            aria-label="home"
+          >
+            Home
+          </a>
+        </li>
+        <li class="site-nav-item my-library-btn">
+          <a
+            class="site-nav-button"
+            data-request="library"
+            aria-label="my library"
+          >
+            My library
+          </a>
+        </li>
+      </ul>
+      <ul class="watched-queue-container">
+        <li>
+          <a
+            class="site-nav-button watched-btn"
+            data-request="watched"
+            aria-label="watched"
+            data-action="watch"
+          >
+            Watched
+          </a>
+        </li>
+        <li>
+          <a
+            class="site-nav-button queue-btn"
+            data-request="queue"
+            aria-label="queue"
+            data-action="queue"
+          >
+            queue
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <form class="search-form">
+      <input
+        id="searchInput"
+        type="text"
+        class="search-form-input"
+        name="searchQuery"
+        placeholder="Movie Search"
+        aria-label="movie search"
+        autocomplete="off"
+      />
+      <button type="submit" class="submit-btn">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+    </form>
+    <div class="logo-container">
+      <a href="./index.html"><i class="fas fa-film film-icon"></i></a>
+      <a href="./index.html"><h1 class="title">Filmoteka</h1></a>
+    </div>
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round">
+          <i id="moonIcon" class="fas fa-moon theme-icon"></i>
+          <i id="sunIcon" class="fas fa-sun theme-icon"></i>
+        </div>
+      </label>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filmoteka</title>
+    <link rel="stylesheet" href="./index.scss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon shortcut" href="./images/flimoteka-logo.svg" />
+  </head>
+  <body>
+    <include src="./partials/header.html"></include>
+    <div class="library-container">
+      <div class="watched"></div>
+      <div class="queue"></div>
+    </div>
+    <main class="movie">
+      <div class="container">
+        <div class="movie-wrapper"></div>
+      </div>
+    </main>
+    <div id="pagination-container">
+      <include src="./partials/pagination.html"></include>
+    </div>
+    <button id="scrollToTopBtn" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <include src="./partials/footer.html"></include>
+    <include src="./partials/film-modal.html"></include>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
